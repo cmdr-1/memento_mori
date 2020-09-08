@@ -1,0 +1,24 @@
+{
+  "browser_specific_settings": {
+    "gecko": {
+      "strict_min_version": "58.0a1"
+    }
+  },
+  "background": {
+      "scripts": ["memento_mori.js"]
+  },
+  "browser_action": {
+    "browser_style": true,
+    "default_title": "Memento Mori"
+  },
+  "description": "A reminder of how temporary this all is.",
+  "icons": {
+    "48": "icons/age-48.png"
+  },
+  "manifest_version": 2,
+  "name": "Memento Mori",
+  "permissions": [
+    "tabs"
+  ],
+  "version": "0.1"
+}
