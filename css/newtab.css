@@ -1,0 +1,20 @@
+html {
+    min-height: 100%;
+
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #23272A;
+}
+
+#clock {
+    color: #ffffff;
+    font-size: 112px;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+     top: 50%;
+     left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
