@@ -7,14 +7,24 @@ html {
     background-color: #23272A;
 }
 
-#clock {
-    color: #ffffff;
-    font-size: 112px;
+h1, #clock {
     text-align: center;
-    margin: 0;
-    position: absolute;
-     top: 50%;
-     left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+    font-size: 56px;
+
 }
+
+h1 {
+    position: absolute;
+        top: 40%;
+        left: 50%;
+}
+
+#clock {
+    font-size: 106px;
+    position: absolute;
+        top: 50%;
+        left: 50%;
+}
+
