@@ -1,30 +1,54 @@
 html {
-    min-height: 100%;
-
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
     background-color: #23272A;
-}
-
-h1, #clock {
-    text-align: center;
-   -ms-transform: translate(-50%, -50%);
-   transform: translate(-50%, -50%);
-    font-size: 56px;
-
-}
-
-h1 {
-    position: absolute;
-        top: 40%;
-        left: 50%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 #clock {
+    font-family: "Cinzel";
+    text-align: center;
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
     font-size: 106px;
     position: absolute;
         top: 50%;
         left: 50%;
 }
 
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-align-items: center;
+    -webkit-flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+    -webkit-justify-content: center;
+    display: -webkit-flex;
+    padding: 10%;
+  }
+
+  .age-label {
+    color: #B0B5B9;
+    font-size: 1.2rem;
+    line-height: 1;
+    margin: 0 0 0 2px;
+  }
+  
+  .count {
+    font-family: "Cinzel";
+    margin: 0;
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: 600;
+  }
+  
+  .count sup {
+    font-size: 2.5rem;
+    margin-left: -.3rem;
+  }
+  
+  .percentage{
+    line-height: 2rem;
+  }
+  label {
+    display: block;
+  }
