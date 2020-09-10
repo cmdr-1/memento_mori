@@ -14,8 +14,8 @@
   "background": {
     "persistent": false,
     "scripts": [
-      "db/birthdate.js",
-      "mementomori.js"
+      "mementomori.js",
+      "newtab.js"
     ]
   },
 
