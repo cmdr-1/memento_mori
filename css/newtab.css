@@ -5,50 +5,33 @@ html {
     height: 100%;
 }
 
-#clock {
-    font-family: "Cinzel";
-    text-align: center;
-   -ms-transform: translate(-50%, -50%);
-   transform: translate(-50%, -50%);
-    font-size: 106px;
-    position: absolute;
-        top: 50%;
-        left: 50%;
+body {
+    align-items: center;
+    flex-direction: column;
+    display: -webkit-flex;
 }
 
-body {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-align-items: center;
-    -webkit-flex-direction: column;
-    -webkit-font-smoothing: antialiased;
-    -webkit-justify-content: center;
-    display: -webkit-flex;
-    padding: 10%;
-  }
-
-  .age-label {
-    color: #B0B5B9;
-    font-size: 1.2rem;
-    line-height: 1;
-    margin: 0 0 0 2px;
-  }
-  
-  .count {
+.count {
     font-family: "Cinzel";
-    margin: 0;
     font-size: 6rem;
     line-height: 1;
-    font-weight: 600;
-  }
-  
-  .count sup {
+}
+
+#clock {
+    font-family: "Cinzel";
+    font-size: 6.5rem;
+    text-align: center;
+}
+
+#memento {
+    font-family: "Cinzel";
+    font-size: 5rem;
+    text-align: center;
+    padding-top: 3em;
+}
+
+p {
+    font-family: "Cinzel";
     font-size: 2.5rem;
-    margin-left: -.3rem;
-  }
-  
-  .percentage{
-    line-height: 2rem;
-  }
-  label {
-    display: block;
-  }
+}
+
