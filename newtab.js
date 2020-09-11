@@ -63,6 +63,9 @@ function currentAge() {
         monthStr = " Month";
     } else if (month > 1 ) {
         monthStr = " Months";
+    } else if (months == 0) {
+        months = "";
+        yearStr = " Years"; 
     }
     if (days == 1) {
         dayStr = " Day | ";
@@ -73,6 +76,9 @@ function currentAge() {
         hourStr = " Hour";
     } else if (hours > 1 ) {
         hourStr = " Hours";
+    } else if (hours == 0) {
+        hours = "";
+        dayStr = " Days" 
     }
     if (minutes == 1) {
         minuteStr = " Minute | ";
@@ -81,8 +87,11 @@ function currentAge() {
     }
     if (seconds == 1) {
         secondStr = " Second";
-    } else if (seconds > 1 ) {
+    } else if (seconds > 1  ) {
         secondStr = " Seconds";
+    } else if (seconds == 0 || seconds == 60) {
+        seconds = "";
+        minuteStr = " Minutes";
     }
 
     document.getElementById("memento").innerText = years + yearStr + months + monthStr + "\n" + days + dayStr + hours + hourStr 
