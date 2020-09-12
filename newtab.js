@@ -35,14 +35,15 @@ function currentAge() {
     var msecBetweenNowAnd1970 = Date.now();
     var ageInMsec = msecBetweenNowAnd1970-msecBetweenDOBAnd1970;
 
-    // Calculations done assuming that a month has 30 days and a year has 365 days - will update to be more accurate in future
+    // Calculations done assuming that a year has 365.24 days per year
+    // source: https://en.wikipedia.org/wiki/Tropical_year#Mean_tropical_year_current_value
     var msec = ageInMsec;
     var second = 1000;
     var minute = second * 60;
     var hour = minute * 60;
     var day = hour * 24;
     var month = day * 30; 
-    var year = day * 365;
+    var year = day * 365.2421897;
 
     // Long hand conversion of milliseconds to units of time, while rounding down allocating remainder for next unit of time
     var years = Math.floor(msec/year);
@@ -84,6 +85,8 @@ function currentAge() {
         minuteStr = " Minute | ";
     } else if (minutes > 1 ) {
         minuteStr = " Minutes | ";
+    } else if (minutes == 0) {
+        minutes = "";
     }
     if (seconds == 1) {
         secondStr = " Second";
@@ -94,8 +97,8 @@ function currentAge() {
         minuteStr = " Minutes";
     }
 
-    document.getElementById("memento").innerText = years + yearStr + months + monthStr + "\n" + days + dayStr + hours + hourStr 
-                                                    + "\n" + minutes + minuteStr + seconds + secondStr;
+    document.getElementById("memento").innerText = years + yearStr + months + monthStr + "\n" + days + dayStr + 
+                                                   hours + hourStr + "\n" + minutes + minuteStr + seconds + secondStr;
     
     // Refresh memento every 1000ms (1 second)
     var age = setTimeout(function(){ currentAge() }, 1000); 
