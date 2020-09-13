@@ -3,15 +3,16 @@ html {
     margin: 0;
     padding: 0;
     height: 100%;
+    color: #ffff;
 }
 
 body {
+    background-color: #23272A;
     align-items: center;
     flex-direction: column;
-    display: -webkit-flex;
 }
 
-.count {
+.title {
     font-family: "Cinzel";
     font-size: 6rem;
     line-height: 1;
@@ -19,19 +20,26 @@ body {
 
 #clock {
     font-family: "Cinzel";
-    font-size: 6.5rem;
+    font-size: 3rem;
     text-align: center;
 }
 
 #memento {
     font-family: "Cinzel";
-    font-size: 5rem;
+    font-size: 4rem;
     text-align: center;
-    padding-top: 3em;
+    padding: 5em 0 5em 0;
+    text-align: center;
 }
 
 p {
     font-family: "Cinzel";
     font-size: 2.5rem;
+    text-align: center;
 }
 
+h3, h4 {
+    font-family: "Cinzel";
+    font-size: 4rem;
+    text-align: center;
+}
