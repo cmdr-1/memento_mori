@@ -33,42 +33,55 @@ function currentAge() {
   var minuteStr = " ";
   var secondStr = " "; 
 
-  if (months == 1) {
-      monthStr = " Month";
-  } else if (months > 1 ) {
-      monthStr = " Months";
-  } else if (months == 0) {
-      months = "";
-      yearStr = " Years"; 
-  }
-  if (days == 1) {
-      dayStr = " Day | ";
-  } else if (days > 1 ) {
-      dayStr = " Days | ";
-  } else if (days == 0) {
-    days = ""; 
-  }
-  if (hours == 1) {
-      hourStr = " Hour";
-  } else if (hours > 1 ) {
-      hourStr = " Hours";
-  } else if (hours == 0) {
-      hours = "";
-      dayStr = " Days" 
-  }
-  if (minutes == 1) {
-      minuteStr = " Minute | ";
-  } else if (minutes > 1 ) {
-      minuteStr = " Minutes | ";
-  }
-  if (seconds == 1) {
-      secondStr = " Second";
-  } else if (seconds > 1  ) {
-      secondStr = " Seconds";
-  } else if (seconds == 0 || seconds == 60) {
-      seconds = "";
-      minuteStr = " Minutes";
-  }
+if (years > 1 ) {
+    yearStr = " Years | ";
+} else if (years == 0) {
+    years = "";
+    yearStr = ""; 
+} else if (year == 0 && month == 0) {
+    years = "";
+    yearStr = "";
+}
+if (months == 1) {
+    monthStr = " Month ";
+} else if (months > 1 ) {
+    monthStr = " Months ";
+} else if (months == 0) {
+    months = "";
+}
+if (days == 1) {
+    dayStr = " Day";
+} else if (days > 1 ) {
+    dayStr = " Days";
+} else if (days == 0) {
+    days = " ";
+    dayStr= " "; 
+}
+if (hours == 1) {
+    hourStr = " Hour ";
+} else if (hours > 1 ) {
+    hourStr = " Hours ";
+} else if (hours == 0) {
+    hours = "";
+}
+if (minutes == 1) {
+    minuteStr = " Minute | ";
+} else if (minutes > 1 ) {
+    minuteStr = " Minutes | ";
+} else if (minutes == 0) {
+    minutes = "";
+} else if ( minutes == 0 && hours == 0) {
+    minuteStr = "";
+    hourStr = "";
+}
+if (seconds == 1) {
+    secondStr = " Second";
+} else if (seconds > 1  ) {
+    secondStr = " Seconds";
+} else if (seconds == 0 || seconds == 60) {
+    seconds = "";
+    minuteStr = " Minutes ";
+}
 
   document.getElementById("memento").innerText = years + yearStr + months + monthStr + "\n" + days + dayStr + hours + hourStr 
                                                   + "\n" + minutes + minuteStr + seconds + secondStr;

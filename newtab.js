@@ -20,21 +20,27 @@ function currentTime() {
     }
   }
   
-  // Initiating currentTime()
-  currentTime(); 
+// Initiating currentTime()
+currentTime(); 
   
 //-----------------------------------------------------------------------//
-var birthDate = new Date(); 
+var birthDate; 
+
+if (localStorage.getItem("birthDate")) {
+    birthDate = localStorage.getItem('birthDate');
+} else {
+    birthDate = new Date();
+}
 
 $("#button").click(function(){
     var dob = $("#birthDate").val();
-    var birthdate = dob.split("/");
+    const birthdate = dob.split("/");
 
     var parsedDate = (birthdate[0]+"/"+birthdate[1]+"/"+birthdate[2]);
     console.log(parsedDate);
     birthDate = parsedDate;
+    localStorage.setItem("birthDate", birthDate);
 });
-
 
 // This is the the age calculator
 function currentAge() {
@@ -64,59 +70,40 @@ function currentAge() {
     var hourStr = " ";
     var minuteStr = " ";
     var secondStr = " "; 
-    console.log(days);
 
-    if (years > 1 ) {
-        yearStr = " Years | ";
-    } else if (years == 0) {
-        years = "";
-        yearStr = ""; 
-    } else if (year == 0 && month == 0) {
-        years = "";
-        yearStr = "";
-    }
-    if (months == 1) {
-        monthStr = " Month ";
-    } else if (months > 1 ) {
-        monthStr = " Months ";
-    } else if (months == 0) {
-        months = "";
-    }
-    if (days == 1) {
-        dayStr = " Day";
-    } else if (days > 1 ) {
-        dayStr = " Days";
-    } else if (days == 0) {
-        days = " ";
-        dayStr= " "; 
-    }
-    if (hours == 1) {
-        hourStr = " Hour ";
-    } else if (hours > 1 ) {
-        hourStr = " Hours ";
-    } else if (hours == 0) {
-        hours = "";
-    }
-    if (minutes == 1) {
-        minuteStr = " Minute | ";
-    } else if (minutes > 1 ) {
-        minuteStr = " Minutes | ";
-    } else if (minutes == 0) {
-        minutes = "";
-    } else if ( minutes == 0 && hours == 0) {
-        minuteStr = "";
-        hourStr = "";
-    }
-    if (seconds == 1) {
-        secondStr = " Second";
-    } else if (seconds > 1  ) {
-        secondStr = " Seconds";
-    } else if (seconds == 0 || seconds == 60) {
-        seconds = "";
-        minuteStr = " Minutes ";
-    }
-    document.getElementById("memento").innerText = years + yearStr + months + monthStr + "| " + days + dayStr + "\n" + hours + hourStr
-                                                + "| " +  minutes + minuteStr + seconds + secondStr;
+        if (years > 1) {
+            yearStr = " - " + years + " Years - ";
+        } 
+        if (months > 1) {
+            monthStr = months + " Months - ";
+        } else if (months == 1) {
+            monthStr = months + " Month - ";
+        } 
+        if (days > 1) {
+            dayStr = days + " Days - ";
+        } else if (days == 1) {
+            dayStr = days + " Day - ";
+        } 
+        
+        if (hours > 1) {
+            hourStr = " - " + hours + " Hours - ";
+        } else if ( hours == 1) {
+            hourStr = " - " + hours + " Hour - ";
+        }
+        if (minutes > 1) { 
+            minuteStr = minutes + " Minutes - ";
+        } else if (minutes == 1) {
+            minuteStr = minutes + " Minute -";
+        }
+        if (seconds > 1) {
+            secondStr = seconds + " Seconds -"
+        } else if (seconds == 1) {
+            secondStr = seconds + " Second -";
+        }
+
+ 
+    document.getElementById("memento-lg").innerText = yearStr + monthStr + dayStr;
+    document.getElementById("memento-sm").innerText = hourStr + minuteStr + secondStr;
 
     // Refresh memento every 1000ms (1 second)
     var age = setTimeout(function(){ currentAge() }, 1000); 

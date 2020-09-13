@@ -8,8 +8,8 @@ html {
 
 body {
     background-color: #23272A;
-    align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .title {
@@ -21,25 +21,20 @@ body {
 #clock {
     font-family: "Cinzel";
     font-size: 3rem;
-    text-align: center;
+    padding: 5em 0 5em 0;
 }
 
-#memento {
+#memento-lg, #memento-sm {
     font-family: "Cinzel";
     font-size: 4rem;
-    text-align: center;
-    padding: 5em 0 5em 0;
-    text-align: center;
 }
 
 p {
     font-family: "Cinzel";
     font-size: 2.5rem;
-    text-align: center;
 }
 
 h3, h4 {
     font-family: "Cinzel";
     font-size: 4rem;
-    text-align: center;
 }
