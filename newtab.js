@@ -20,9 +20,6 @@ function currentTime() {
     }
   }
   
-// Initiating currentTime()
-currentTime(); 
-  
 //-----------------------------------------------------------------------//
 var birthDate; 
 
@@ -34,13 +31,21 @@ if (localStorage.getItem("birthDate")) {
 
 $("#button").click(function(){
     var dob = $("#birthDate").val();
-    const birthdate = dob.split("/");
 
+    if (typeof dob !== null) {
+    const birthdate = dob.split("/");
     var parsedDate = (birthdate[0]+"/"+birthdate[1]+"/"+birthdate[2]);
     console.log(parsedDate);
     birthDate = parsedDate;
     localStorage.setItem("birthDate", birthDate);
+    } 
 });
+
+function renderTimers() {
+    currentAge();
+    currentTime();
+}
+
 
 // This is the the age calculator
 function currentAge() {
@@ -108,5 +113,5 @@ function currentAge() {
     // Refresh memento every 1000ms (1 second)
     var age = setTimeout(function(){ currentAge() }, 1000); 
 }
-  // Initiating currentTime()
-  currentAge();
+//   // Initiating currentTime()
+//   currentAge();

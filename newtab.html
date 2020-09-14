@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="newtab" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="newtab" content="width=device-width, initial-scale=1.0" />
     <title>Memento Mori - New Tab</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet"> 
-    <link href="css/newtab.css" type="text/css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div>
- 
-        <div class="title"><h3>Memento Mori</h3></div>  
-    
-        <div>
-        <label for="birthDate">Enter your date of birth:</label>
-        <input type="text" name="Birthdate" id="birthDate" placeholder="YYYY/MM/DD"></input>
-        <button type="submit" id="button">Submit</button>
-        </div>
 
-        <div id="memento-lg"></div>
-        <div id="memento-sm"></div>
- 
-        <div id="clock"></div>
-    </div>  
-     
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet"/>
+    <link href="css/newtab.css" type="text/css" rel="stylesheet"/>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="main" style="width: 100%"></div>
+
+    <script>
+      if (localStorage.getItem("birthDate") !== "undefined") {
+        document.title = "Set up Memento Mori";
+        document.getElementById("main").innerHTML =
+          `<div class="container">
+            <label for="birthDate">Enter your date of birth:</label>
+            <input type="text" name="Birthdate"id="birthDate" placeholder="YYYY/MM/DD"></input>
+            <button type="submit" id="button">Submit</button>
+          </div>`
+        ;
+      } else {
+        document.getElementById("main").innerHTML = 
+          `<div class="container">
+            <div class="title"><h3>Memento Mori</h3></div>
+            <div id="memento-lg"></div>
+            <div id="memento-sm"></div>
+            <div id="clock"></div>
+          </div>`
+        ;
+      }
+    </script>
     <script type="text/javascript" src="newtab.js"></script>
-</body>
+  </body>
 </html>
