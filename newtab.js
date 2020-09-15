@@ -33,8 +33,8 @@ $("#button").click(function(){
     var dob = $("#birthDate").val();
 
     if (typeof dob !== null) {
-    const birthdate = dob.split("/");
-    var parsedDate = (birthdate[0]+"/"+birthdate[1]+"/"+birthdate[2]);
+    const birthdate = dob.split("-");
+    var parsedDate = (birthdate[0]+"-"+birthdate[1]+"-"+birthdate[2]);
     console.log(parsedDate);
     birthDate = parsedDate;
     localStorage.setItem("birthDate", birthDate);
@@ -45,7 +45,6 @@ function renderTimers() {
     currentAge();
     currentTime();
 }
-
 
 // This is the the age calculator
 function currentAge() {

@@ -1,32 +1,31 @@
 html {
     background-color: #23272A;
-    margin: 0;
-    padding: 0;
-    height: 100%;
     color: #ffff;
+    text-align: center;
 }
 
 body {
     background-color: #23272A;
-    flex-direction: column;
-    text-align: center;
+    align-content: flex-end;
 }
 
 .title {
+    display: flex;
     font-family: "Cinzel";
     font-size: 6rem;
-    line-height: 1;
+    justify-content: center;
 }
 
 #clock {
     font-family: "Cinzel";
     font-size: 3rem;
-    padding: 5em 0 5em 0;
 }
 
 #memento-lg, #memento-sm {
+    display: flex;
     font-family: "Cinzel";
     font-size: 4rem;
+    justify-content: center;
 }
 
 p {
