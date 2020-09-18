@@ -2,7 +2,7 @@
   "name": "Memento Mori",
   "author": "mance-rah",
   "description": "Reminds the user of the brevity of life with every new tab.",
-  "version": "0.1",
+  "version": "1.0",
   "manifest_version": 2,
 
   "icons": {
@@ -11,21 +11,16 @@
     "128": "img/age-128.png"
   },
 
-  "background": {
-    "persistent": false,
-    "scripts": [
-      "mementomori.js",
-      "newtab.js"
-    ]
-  },
+  "permissions": [
+    "storage"
+  ],
 
   "chrome_url_overrides": {
     "newtab": "newtab.html"
   },
 
   "web_accessible_resources": [
-    "img/*",
-    "js/*",
+    "icons/*",
     "css/*"
   ]
 }
