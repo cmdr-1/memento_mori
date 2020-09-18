@@ -41,6 +41,12 @@ $("#button").click(function(){
     } 
 });
 
+$("#clearDob").click(function(){
+    localStorage.clear();
+    location.reload();
+});
+
+
 function renderTimers() {
     currentAge();
     currentTime();
@@ -112,5 +118,3 @@ function currentAge() {
     // Refresh memento every 1000ms (1 second)
     var age = setTimeout(function(){ currentAge() }, 1000); 
 }
-//   // Initiating currentTime()
-//   currentAge();

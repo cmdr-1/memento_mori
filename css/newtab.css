@@ -6,7 +6,23 @@ html {
 
 body {
     background-color: #23272A;
-    align-content: flex-end;
+}
+
+p {
+    font-family: "Cinzel";
+    font-size: 2.5rem;
+}
+
+h3, h4 {
+    font-family: "Cinzel";
+    font-size: 4rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 .title {
@@ -19,6 +35,8 @@ body {
 #clock {
     font-family: "Cinzel";
     font-size: 3rem;
+    padding-top: 25vh;
+    
 }
 
 #memento-lg, #memento-sm {
@@ -28,12 +46,14 @@ body {
     justify-content: center;
 }
 
-p {
-    font-family: "Cinzel";
-    font-size: 2.5rem;
+#memento-lg {
+    padding-top: 15vh;
 }
 
-h3, h4 {
-    font-family: "Cinzel";
-    font-size: 4rem;
+#clearDob {
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    align-self: center;
+    margin-top: 15vh;
 }
