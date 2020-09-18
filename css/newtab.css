@@ -1,33 +1,11 @@
 html {
     background-color: #23272A;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+    color: #ffff;
+    text-align: center;
 }
 
 body {
-    align-items: center;
-    flex-direction: column;
-    display: -webkit-flex;
-}
-
-.count {
-    font-family: "Cinzel";
-    font-size: 6rem;
-    line-height: 1;
-}
-
-#clock {
-    font-family: "Cinzel";
-    font-size: 6.5rem;
-    text-align: center;
-}
-
-#memento {
-    font-family: "Cinzel";
-    font-size: 5rem;
-    text-align: center;
-    padding-top: 3em;
+    background-color: #23272A;
 }
 
 p {
@@ -35,3 +13,47 @@ p {
     font-size: 2.5rem;
 }
 
+h3, h4 {
+    font-family: "Cinzel";
+    font-size: 4rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.title {
+    display: flex;
+    font-family: "Cinzel";
+    font-size: 6rem;
+    justify-content: center;
+}
+
+#clock {
+    font-family: "Cinzel";
+    font-size: 3rem;
+    padding-top: 25vh;
+    
+}
+
+#memento-lg, #memento-sm {
+    display: flex;
+    font-family: "Cinzel";
+    font-size: 4rem;
+    justify-content: center;
+}
+
+#memento-lg {
+    padding-top: 15vh;
+}
+
+#clearDob {
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    align-self: center;
+    margin-top: 15vh;
+}
