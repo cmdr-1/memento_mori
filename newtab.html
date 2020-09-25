@@ -10,42 +10,12 @@
       rel="stylesheet"
     />
     <link href="css/newtab.css" type="text/css" rel="stylesheet" />
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    
-    <script type="text/javascript" src="newtab.js"></script>
+
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
   </head>
   <body>
     <div id="main" style="width: 100%"></div>
 
-    <script>
-      if (localStorage.length == 0) {
-        document.title = "Set up Memento Mori";
-        document.getElementById("main").innerHTML = 
-        `<div class="container">
-            <div class="title"><h3>Set up Memento Mori</h3></div>
-            <form>
-            <label for="birthDate">Enter your date of birth:</label>
-            <input type="date" name="Birthdate"id="birthDate" placeholder="YYYY-MM-DD" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"></input>
-            <button type="submit" id="button">Submit</button>
-            </form>
-        </div>`;
-      } else {
-        document.title = "Memento Mori";
-        document.getElementById("main").innerHTML = 
-        `<div class="container">
-            <div class="title"><h3>Memento Mori</h3></div>
-            <div id="memento-lg"></div>
-            <div id="memento-sm"></div>
-            <div id="clock""></div>
-            <button type="submit" id="clearDob">Reset DoB</button>
-        </div>`;
-        renderTimers();
-      }
-    </script>
     <script type="text/javascript" src="newtab.js"></script>
   </body>
 </html>
