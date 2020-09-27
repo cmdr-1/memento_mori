@@ -3,24 +3,34 @@ function main() {
   // input has date verification
   if (localStorage.length == 0) {
     document.title = "Set up Memento Mori";
-    document.getElementById("main").innerHTML = `<div class="container">
+    document.getElementById("main").innerHTML = `
             <div class="title"><h3>Set up Memento Mori</h3></div>
             <form>
             <label for="birthDate">Enter your date of birth:</label>
             <input type="date" name="Birthdate"id="birthDate" placeholder="YYYY-MM-DD" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"></input>
-            <button type="submit" id="button">Submit</button>
+            <button type="submit" id="button" class="btn btn-primary">Submit</button>
             </form>
         </div>`;
     // if there is a date in storage, render the clocks
   } else {
     document.title = "Memento Mori";
-    document.getElementById("main").innerHTML = `<div class="container">
-            <div class="title"><h3>Memento Mori</h3></div>
+    document.getElementById("main").innerHTML = `
+    <div class="row">
+    <div class="title"><h3>Memento Mori</h3></div>
+    </div>
+            <div class="row">
             <div id="memento-lg"></div>
             <div id="memento-sm"></div>
-            <div id="clock""></div>
-            <button type="submit" id="clearDob">Reset DoB</button>
-        </div>`;
+            </div>
+
+            <div class="row">
+            <div id="clock"></div>
+            </div>
+
+            <div class="row">
+            <button type="submit" id="clearDob" class="btn btn-dark btn-sm">Reset</button>
+            </div>
+    `;
     renderTimers();
   }
 }
@@ -28,6 +38,7 @@ function main() {
 main();
 
 //-----------------------------------------------------------------------//
+
 var birthDate;
 
 // Try to get the birthDate, if there isn't one, initialize Date
@@ -64,6 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
     location.reload();
   });
 });
+
+//-----------------------------------------------------------------------//
 
 // This is the the age calculator
 function currentAge() {
@@ -108,7 +121,7 @@ function currentAge() {
   // Create the strings that will be rendered on the new tab page
   // values equal to 1 will generate strings without plural units of time
   if (years > 1) {
-    yearStr = " - " + years + " Years - ";
+    yearStr = "- " + years + " Years - ";
   }
   if (months > 1) {
     monthStr = months + " Months - ";
@@ -122,9 +135,9 @@ function currentAge() {
   }
 
   if (hours > 1) {
-    hourStr = " - " + hours + " Hours - ";
+    hourStr = "- " + hours + " Hours - ";
   } else if (hours == 1) {
-    hourStr = " - " + hours + " Hour - ";
+    hourStr = "- " + hours + " Hour - ";
   }
   if (minutes > 1) {
     minuteStr = minutes + " Minutes - ";
@@ -138,8 +151,7 @@ function currentAge() {
   }
 
   document.getElementById("memento-lg").innerText = yearStr + monthStr + dayStr;
-  document.getElementById("memento-sm").innerText =
-    hourStr + minuteStr + secondStr;
+  document.getElementById("memento-sm").innerText = hourStr + minuteStr + secondStr;
 
   // Refresh memento every 1000ms (1 second) to simulate a live clock
   var age = setTimeout(function () {
