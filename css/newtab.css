@@ -28,22 +28,28 @@ label {
 }
 
 .row {
-    height:20%;
+    position: relative;
+    height: 25%;
     min-height:150px;
+    margin-top: 5%;
+
 }
 
 .title {
     font-family: "Cinzel";
     font-size: 6rem;
-    
+    margin-top: 40vh;    
+}
 
+.col-sm-12{
+    position: absolute;
+    bottom: 0;
 }
 
 #clock {
     font-family: "Cinzel";
     font-size: 3rem;
     color: #ffff;
-    
 }
 
 #memento-lg, #memento-sm {
@@ -52,3 +58,6 @@ label {
     color: #ffff;
 }
 
+#button {
+    margin: 10px;
+}

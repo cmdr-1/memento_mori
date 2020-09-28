@@ -8,7 +8,7 @@ function main() {
             <form>
             <label for="birthDate">Enter your date of birth:</label>
             <input type="date" name="Birthdate"id="birthDate" placeholder="YYYY-MM-DD" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"></input>
-            <button type="submit" id="button" class="btn btn-primary">Submit</button>
+            <button type="submit" id="button" class="btn btn-secondary">Submit</button>
             </form>
         </div>`;
     // if there is a date in storage, render the clocks
@@ -16,19 +16,19 @@ function main() {
     document.title = "Memento Mori";
     document.getElementById("main").innerHTML = `
     <div class="row">
-    <div class="title"><h3>Memento Mori</h3></div>
+    <div><h3>Memento Mori</h3></div>
     </div>
             <div class="row">
+            <div class="col my-auto">
             <div id="memento-lg"></div>
             <div id="memento-sm"></div>
             </div>
-
-            <div class="row">
-            <div id="clock"></div>
             </div>
 
             <div class="row">
+            <div class="col-sm-12">
             <button type="submit" id="clearDob" class="btn btn-dark btn-sm">Reset</button>
+            </div>
             </div>
     `;
     renderTimers();
@@ -78,18 +78,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //-----------------------------------------------------------------------//
 
+// adds a 0 in front of clock values that are less than 10
+function updateTime(k) {
+  if (k < 10) {
+    return "0" + k;
+  } else {
+    return k;
+  }
+}
 // This is the the age calculator
 function currentAge() {
   let birth_date = new Date(birthDate);
   var currentDate = new Date();
 
   // utilizes javascript funtions to calculate the time between the attributes of the current year and birthdate
-  var years = updateTime(currentDate.getFullYear() - birth_date.getFullYear());
-  var months = updateTime(currentDate.getMonth() - birth_date.getMonth());
-  var days = updateTime(currentDate.getDate() - birth_date.getDate());
-  var hours = updateTime(currentDate.getHours());
-  var minutes = updateTime(currentDate.getMinutes());
-  var seconds = updateTime(currentDate.getSeconds());
+  var years = currentDate.getFullYear() - birth_date.getFullYear();
+  var months = currentDate.getMonth() - birth_date.getMonth();
+  var days = currentDate.getDate() - birth_date.getDate();
+  var hours = currentDate.getHours();
+  var minutes = currentDate.getMinutes();
+  var seconds = currentDate.getSeconds();
 
   // if the current month index is lower than the birthdate index, subtract one year
   if (
@@ -110,6 +118,16 @@ function currentAge() {
     days = Math.floor(30.44 + days);
   }
 
+    // the average life expectancy of a person in the world is approx. 72.0 years 
+    // https://www.who.int/gho/mortality_burden_disease/life_tables/situation_trends_text/en/
+  var yearsLeft = updateTime(72 - years);
+  var monthsLeft = updateTime(12 - months); 
+  var daysLeft = updateTime(Math.floor(30.44 - days));
+  var hoursLeft = updateTime(24 - hours);
+  var minutesLeft = updateTime(60 - minutes);
+  var secondsLeft = updateTime(60 - seconds);
+  
+
   // initialize empty strings for each time attribute
   var yearStr = " ";
   var monthStr = " ";
@@ -120,34 +138,36 @@ function currentAge() {
 
   // Create the strings that will be rendered on the new tab page
   // values equal to 1 will generate strings without plural units of time
-  if (years > 1) {
-    yearStr = "- " + years + " Years - ";
+  if (yearsLeft > 1) {
+    yearStr = "- " + yearsLeft + " Years - ";
   }
-  if (months > 1) {
-    monthStr = months + " Months - ";
-  } else if (months == 1) {
-    monthStr = months + " Month - ";
+  if (monthsLeft > 1) {
+    monthStr = monthsLeft + " Months - ";
+  } else if (monthsLeft == 1) {
+    monthStr = monthsLeft + " Month - ";
   }
-  if (days > 1) {
-    dayStr = days + " Days - ";
-  } else if (days == 1) {
-    dayStr = days + " Day - ";
+  if (daysLeft > 1) {
+    dayStr = daysLeft + " Days - ";
+  } else if (daysLeft == 1) {
+    dayStr = daysLeft + " Day - ";
   }
 
-  if (hours > 1) {
-    hourStr = "- " + hours + " Hours - ";
-  } else if (hours == 1) {
-    hourStr = "- " + hours + " Hour - ";
+  if (hoursLeft > 1) {
+    hourStr = "- " + hoursLeft + " Hours - ";
+  } else if (hoursLeft == 1) {
+    hourStr = "- " + hoursLeft + " Hour - ";
   }
-  if (minutes > 1) {
-    minuteStr = minutes + " Minutes - ";
-  } else if (minutes == 1) {
-    minuteStr = minutes + " Minute -";
+  if (minutesLeft > 1) {
+    minuteStr = minutesLeft + " Minutes - ";
+  } else if (minutesLeft == 1) {
+    minuteStr = minutesLeft + " Minute -";
   }
-  if (seconds > 1) {
-    secondStr = seconds + " Seconds -";
-  } else if (seconds == 1) {
-    secondStr = seconds + " Second -";
+  if (secondsLeft > 1) {
+    secondStr = secondsLeft + " Seconds -";
+  } else if (secondsLeft == 1) {
+    secondStr = secondsLeft + " Second -";
+  } else if (secondsLeft == 0) {
+    secondStr = secondsLeft + " Second -";
   }
 
   document.getElementById("memento-lg").innerText = yearStr + monthStr + dayStr;
@@ -159,7 +179,7 @@ function currentAge() {
   }, 1000);
 }
 
-// Clock display
+// Clock display - may or may not use in production version
 function currentTime() {
   var date = new Date();
   var hour = date.getHours();
@@ -175,16 +195,8 @@ function currentTime() {
   }, 1000);
 }
 
-// adds a 0 in front of clock values that are less than 10
-function updateTime(k) {
-  if (k < 10) {
-    return "0" + k;
-  } else {
-    return k;
-  }
-}
 
 function renderTimers() {
   currentAge();
-  currentTime();
+  //currentTime();
 }
