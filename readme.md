@@ -21,3 +21,13 @@ This is a dirty calculation, and for a future iteration of this extension I’d 
 
 Additionally, I’d like to add some sort of visual representation of the amount of time left, maybe in the form of an hourglass, but in a way to ensure the extension retains a minimal aesthetic. 
 
+<h2>Development Process</h2>
+
+Most of the work done for this app was done in the JavaScript file. Initially, I had used script tags in the HTML file to check whether or not a birthdate had been saved to the browser’s `localStorage` and then render HTML elements based on the outcome. I found out when trying to test my extension in Firefox (using [`web-ext run`](https://github.com/mozilla/web-ext) that my HTML wasn’t rendering at all. Through some digging, I eventually discovered that web extensions don’t like `<script>` tags in their HTML files, and would just silently fail any code inside the tags.
+
+The solution to this problem was to obviously remove any `<script>` tags and move the code inside of them into the JavaScript file. To do this, I put the code into a function called `main()` and had it run as soon as the JS file was loaded.
+
+Buttons that relied on JavaScript event listeners in the HTML also had to be changed, so instead, I set up event listeners that activated after the DOM was loaded and fired when their associated buttons are clicked. 
+
+
+
