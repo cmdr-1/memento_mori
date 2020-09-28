@@ -23,11 +23,11 @@ Additionally, I’d like to add some sort of visual representation of the amount
 
 <h2>Development Process</h2>
 
-Most of the work done for this app was done in the JavaScript file. Initially, I had used script tags in the HTML file to check whether or not a birthdate had been saved to the browser’s `localStorage` and then render HTML elements based on the outcome. I found out when trying to test my extension in Firefox (using [`web-ext run`](https://github.com/mozilla/web-ext) that my HTML wasn’t rendering at all. Through some digging, I eventually discovered that web extensions don’t like `<script>` tags in their HTML files, and would just silently fail any code inside the tags.
+Most of the work done for this app was done in the JavaScript file. Initially, I had used script tags in the HTML file to check whether or not a birthdate had been saved to the browser’s `localStorage` and then render HTML elements based on the outcome. I found out when trying to test my extension in Firefox (using [`web-ext run`](https://github.com/mozilla/web-ext)) that my HTML wasn’t rendering at all. Through some digging, I eventually discovered that web extensions don’t like `<script>` tags in their HTML files, and would just silently fail any code inside the tags. In general, security is a lot stricter with extensions. 
 
 The solution to this problem was to obviously remove any `<script>` tags and move the code inside of them into the JavaScript file. To do this, I put the code into a function called `main()` and had it run as soon as the JS file was loaded.
 
 Buttons that relied on JavaScript event listeners in the HTML also had to be changed, so instead, I set up event listeners that activated after the DOM was loaded and fired when their associated buttons are clicked. 
 
-
+Another recurring issue I found when trying to text my extension was that the JQuery symbol was considered `undefined`. I figured that this was also associated with web extensions security standards. After trying to figure out how to fix the error with JQuery, I decided to instead to just change my code to use only native JavaScript and avoid the the dependance on JQuery all together. That solved my issue and wasn't as much effort as I thought it was going to be. 
 
