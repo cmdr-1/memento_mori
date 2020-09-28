@@ -9,7 +9,7 @@ The original inspiration for this extension came from a comment I saw online abo
 I found out the hard way that it wasn’t as easy as I thought it was going to be. I went through the basic documentation for Firefox extensions and worked through a few examples before even beginning to tackle this project. It took a lot of research, asking a lot of questions in Discord communities and on StackOverflow, I was able to slap together a working project. This is actually my first entirely undirected piece of code developed, so it’s a big step for me. Now, without further ado, my first Firefox extension:
 
 
-<h2>Memento Mori</h2>  
+<h3>Memento Mori</h3>  
 
 
 > "*Memento* is 'to remember, to bear in mind', usually serving as a warning: "remember!" *Mori* is the present infinitive of the deponent verb morior 'to die'. In other words, "remember death" or "remember that you die"
@@ -22,7 +22,7 @@ This is a dirty calculation, and for a future iteration of this extension I’d 
 
 Additionally, I’d like to add some sort of visual representation of the amount of time left, maybe in the form of an hourglass, but in a way to ensure the extension retains a minimal aesthetic. 
 
-<h2>Development Process</h2>
+<h3>Development Process</h3>
 
 Most of the work done for this app was done in the JavaScript file. Initially, I had used script tags in the HTML file to check whether or not a birthdate had been saved to the browser’s `localStorage` and then render HTML elements based on the outcome. I found out when trying to test my extension in Firefox (using [`web-ext run`](https://github.com/mozilla/web-ext)) that my HTML wasn’t rendering at all. Through some digging, I eventually discovered that web extensions don’t like `<script>` tags in their HTML files, and would just silently fail any code inside the tags. In general, security is a lot stricter with extensions. 
 
