@@ -15,7 +15,7 @@ I found out the hard way that it wasn’t as easy as I thought it was going to b
 
 Simply put, [*Memento Mori*](https://en.wikipedia.org/wiki/Memento_mori) is a new tab extension that aims to remind the user of the brevity of life. In Version 1.0, the setup consists of entering in your birthday. After being validated, the birthdate is stored in a variable in Firefox’s `localStorage`. After that, any time a new tab is opened, a countdown is shown. This countdown shows you how much time you have left before you die. 
 
-This countdown is created by using JavasScript to determine the current date and find the difference between the entered date of birth. Then, this value is subtracted from 72 years. Why 72? 72 years is the average [life expectancy](https://www.who.int/gho/mortality_burden_disease/life_tables/situation_trends_text/en/) of a human according to the World Health Organization. 
+This countdown is created by using JavasScript to determine the current date and then find the difference between the entered date of birth; the value is then subtracted from 72 years. Why 72? 72 years is the average [life expectancy](https://www.who.int/gho/mortality_burden_disease/life_tables/situation_trends_text/en/) of a human according to the World Health Organization. 
 
 This is a dirty calculation, and for a future iteration of this extension I’d like to make an API call to fetch the average life expectancy of a person in the country from which the user is using the extension.
 
