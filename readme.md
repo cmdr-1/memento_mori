@@ -11,7 +11,7 @@ I found out the hard way that it wasn’t as easy as I thought it was going to b
 <h2>Memento Mori</h2>  
 
 
->“to remember, to bear in mind', usually serving as a warning: "remember!" Mori is the present infinitive of the deponent verb morior 'to die'. In other words, "remember death" or "remember that you die"
+> "*Memento* is 'to remember, to bear in mind', usually serving as a warning: "remember!" *Mori* is the present infinitive of the deponent verb morior 'to die'. In other words, "remember death" or "remember that you die"
 
 Simply put, [*Memento Mori*](https://en.wikipedia.org/wiki/Memento_mori) is a new tab extension that aims to remind the user of the brevity of life. In Version 1.0, the setup consists of entering in your birthday. After being validated, the birthdate is stored in a variable in Firefox’s `localStorage`. After that, any time a new tab is opened, a countdown is shown. 
 
