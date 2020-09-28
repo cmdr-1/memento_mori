@@ -34,10 +34,11 @@ First of all, I’d like to add some sort of visual representation of the amount
 
 Additionally, the method I used to determine the countdown of the end of your lives is a dirty calculation, and for a future iteration of this extension I’d like to make an API call to fetch the average life expectancy of a person in the country from which the user is using the extension. I'm not exactly at the point where I develop this feature without a lot of time invested, so I'm putting it off until I'm a bit more savvy. Life expectancy can vary as as much as 30 years depending on geographic location, and even in the same region, the life expectancy between males and females can vary by half a decade. If I had to brainstorm right now about what steps I'd need to take to implement a more unique, accurate coundtown for each user, it would go like this: 
 
-- browsers are actually really cool in that they collect a lot of information on their own, so a lot of it is just figuring out how to call that info
-- stuff like the country of the user should be relatively easy to get using browser API calls, and determining gender would be just a drop down in addition to the current set-up
-- the hard part is going to be finding an API of the average life expectancies, but realistically all that data already exists and I could probably create my own database for my extension to use if there isn't an existing API for it
-- then I'd a query to match the gender and country of origin of the user to a line in the database and store the year value in a variable. Finally, I'd substitute the 72 value for that variable, and that should be it
+-   browsers are actually really cool in that they collect a lot of information on their own, so a lot of it is just figuring out how to call that info
+-   stuff like the country of the user should be relatively easy to get using browser API calls, and determining gender would be just a drop down in addition to the current set-up
+-   the hard part is going to be finding an API of the average life expectancies, but realistically all that data already exists and I could probably create my own database for my extension to use if there isn't an existing API for it
+-   then I'd a query to match the gender and country of origin of the user to a line in the database and store the year value in a variable. 
+-   Finally, I'd substitute the 72 years of life expectancy value for the variable mentioned above, and that should be it
 
 Now that I've written it out, it doesn't seem that bad.
 
