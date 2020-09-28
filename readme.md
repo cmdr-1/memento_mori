@@ -1,5 +1,5 @@
 <h1>Introduction</h1>
-This Firefox extension was developed as the final project for [CS50x Intro to Computer Science](https://cs50.harvard.edu/x/2020/project/).
+This Firefox extension was developed as the final project for [CS50x- Intro to Computer Science] (https://cs50.harvard.edu/x/2020/project/).
 
 The instructions for this final project were relatively vague:
 “The final project is your opportunity to take your newfound savvy with programming out for a spin and develop your very own piece of software. So long as your project draws upon this course’s lessons, the nature of your project is entirely up to you. You may implement your project in any language(s)... All that we ask is that you build something of interest to you, that you solve an actual problem, that you impact your community, or that you change the world. Strive to create something that outlives this course.” 
