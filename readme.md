@@ -1,4 +1,4 @@
-This Firefox extension was developed as the final project for [CS50x - Intro to Computer Science] (https://cs50.harvard.edu/x/2020/project/). 
+This Firefox extension was developed as the final project for [CS50x - Intro to Computer Science](https://cs50.harvard.edu/x/2020/project/). 
 
 The instructions for this final project were relatively vague:
 “The final project is your opportunity to take your newfound savvy with programming out for a spin and develop your very own piece of software. So long as your project draws upon this course’s lessons, the nature of your project is entirely up to you. You may implement your project in any language(s)... All that we ask is that you build something of interest to you, that you solve an actual problem, that you impact your community, or that you change the world. Strive to create something that outlives this course.” 
@@ -8,10 +8,10 @@ The original inspiration for this extension came from a comment I saw online abo
 I found out the hard way that it wasn’t as easy as I thought it was going to be. I went through the basic documentation for Firefox extensions and worked through a few examples before even beginning to tackle this project. It took a lot of research, asking a lot of questions in Discord communities and on StackOverflow, I was able to slap together a working project. This is actually my first entirely undirected piece of code developed, so it’s a big step for me. Now, without further ado, my first Firefox extension:
 
 
-<h2>[__Memento Mori__](https://en.wikipedia.org/wiki/Memento_mori)<h2>  
+<h2>[Memento Mori](https://en.wikipedia.org/wiki/Memento_mori)<h2>  
 
 
-“to remember, to bear in mind', usually serving as a warning: "remember!" Mori is the present infinitive of the deponent verb morior 'to die'. In other words, "remember death" or "remember that you die"
+>“to remember, to bear in mind', usually serving as a warning: "remember!" Mori is the present infinitive of the deponent verb morior 'to die'. In other words, "remember death" or "remember that you die"
 
 Simply put, *Memento Mori* is a new tab extension that aims to remind the user of the brevity of life. In Version 1.0, the setup consists of entering in your birthday. After being validated, the birthdate is stored in a variable in Firefox’s `localStorage`. After that, any time a new tab is opened, a countdown is shown. 
 
