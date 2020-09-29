@@ -1,3 +1,5 @@
+Extension Link: https://addons.mozilla.org/en-US/firefox/addon/memento_mori/
+
 <h1>Introduction</h1>
 This Firefox extension was developed as the final project for [CS50x - Intro to Computer Science](https://cs50.harvard.edu/x/2020/project/).
 
