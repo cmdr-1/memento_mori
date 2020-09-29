@@ -49,5 +49,3 @@ Additionally, the method I used to determine the countdown of the end of your li
 -    Finally, I'd substitute the 72 years of life expectancy value for the variable mentioned above, and that should be it
 
 Now that I've written it out, it doesn't seem that bad.
-
-Extension Link: https://addons.mozilla.org/en-US/firefox/addon/memento_mori/
