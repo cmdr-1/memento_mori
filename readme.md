@@ -3,7 +3,18 @@ Extension Link: https://addons.mozilla.org/en-US/firefox/addon/memento_mori/
 
 Short Video Presentation: https://www.youtube.com/watch?v=3s35WVbIEsM&feature=youtu.be
 
-<h1>Introduction</h1>
+
+<h3>Memento Mori</h3>  
+
+
+> "*Memento* is 'to remember, to bear in mind', usually serving as a warning: "remember!" *Mori* is the present infinitive of the deponent verb morior 'to die'. In other words, "remember death" or "remember that you die"
+
+Simply put, [*Memento Mori*](https://en.wikipedia.org/wiki/Memento_mori) is a new tab extension that aims to remind the user of the brevity of life. In Version 1.0, the setup consists of entering in your birthday. After being validated, the birthdate is stored in a variable in Firefox’s `localStorage`. After that, any time a new tab is opened, a countdown is shown. This countdown shows you how much time you have left before you die. 
+
+This countdown is created by using JavasScript to determine the current date and then find the difference between the entered date of birth; the value is then subtracted from 72 years. Why 72? 72 years is the average [life expectancy](https://www.who.int/gho/mortality_burden_disease/life_tables/situation_trends_text/en/) of a human according to the World Health Organization. 
+
+
+<h1>Background</h1>
 This Firefox extension was developed as the final project for [CS50x - Intro to Computer Science](https://cs50.harvard.edu/x/2020/project/).
 
 The instructions for this final project were relatively vague:
@@ -14,14 +25,7 @@ The original inspiration for this extension came from a comment I saw online abo
 I found out the hard way that it wasn’t as easy as I thought it was going to be. I went through the basic documentation for Firefox extensions and worked through a few examples before even beginning to tackle this project. It took a lot of research, asking a lot of questions in Discord communities and on StackOverflow, I was able to slap together a working project. This is actually my first entirely undirected piece of code developed, so it’s a big step for me. Now, without further ado, my first Firefox extension:
 
 
-<h3>Memento Mori</h3>  
-
-
-> "*Memento* is 'to remember, to bear in mind', usually serving as a warning: "remember!" *Mori* is the present infinitive of the deponent verb morior 'to die'. In other words, "remember death" or "remember that you die"
-
-Simply put, [*Memento Mori*](https://en.wikipedia.org/wiki/Memento_mori) is a new tab extension that aims to remind the user of the brevity of life. In Version 1.0, the setup consists of entering in your birthday. After being validated, the birthdate is stored in a variable in Firefox’s `localStorage`. After that, any time a new tab is opened, a countdown is shown. This countdown shows you how much time you have left before you die. 
-
-This countdown is created by using JavasScript to determine the current date and then find the difference between the entered date of birth; the value is then subtracted from 72 years. Why 72? 72 years is the average [life expectancy](https://www.who.int/gho/mortality_burden_disease/life_tables/situation_trends_text/en/) of a human according to the World Health Organization. 
+[Memento Mori](https://imgur.com/a/FPfpnTD)
 
 <h3>Development Process</h3>
 
