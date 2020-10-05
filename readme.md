@@ -23,7 +23,7 @@ The instructions for this final project were relatively vague:
 
 The original inspiration for this extension came from a comment I saw online about a Chrome extension that changes New Tabs to show your age, the global population or a countdown to a certain date. The name of the extension is [Morality](https://chrome.google.com/webstore/detail/mortality-new-tab/eeedcpdcehnikgkhbobmkjcipjhlbmpn). Most Chrome extensions have a version for Firefox, or at least something similar, but I wasn’t able to find one, so I thought that maybe at this point, a basic Firefox extension was within my skill set. 
 
-I found out the hard way that it wasn’t as easy as I thought it was going to be. I went through the basic documentation for Firefox extensions and worked through a few examples before even beginning to tackle this project. It took a lot of research, asking a lot of questions in Discord communities and on StackOverflow, I was able to slap together a working project. This is actually my first entirely undirected piece of code developed, so it’s a big step for me. Now, without further ado, my first Firefox extension:
+I found out the hard way that it wasn’t as easy as I thought it was going to be. I went through the basic documentation for Firefox extensions and worked through a few examples before even beginning to tackle this project. It took a lot of research, asking a lot of questions in Discord communities and on StackOverflow, I was able to slap together a working project. This is actually my first entirely undirected piece of code developed, so it’s a big step for me.
 
 
 <h2>Development Process</h2>
